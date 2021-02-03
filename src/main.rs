@@ -5,7 +5,6 @@ fn main() {
         .skip(1)
         .collect::<Vec<String>>();
 
-    //args.sort();
     selection_sort(&mut args);
 
     println!("{:?}", args);
@@ -20,8 +19,6 @@ fn selection_sort(items: &mut Vec<String>) {
                 smallest_index = j;
             }
         }
-        let temp = items[smallest_index].clone();
-        items[smallest_index] = items[i].clone();
-        items[i] = temp;
+        items.swap(smallest_index, i);
     }
 }
